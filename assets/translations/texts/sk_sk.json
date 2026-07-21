@@ -1,0 +1,44 @@
+{
+    "metadata": {
+        "lang-name": "sk_SK",
+        "lang-author": "Galx7599Sk",
+        "lang-version": "1.0.0",
+        "lang-display": "Slovenčina",
+        "lang-rtl": false,
+        "versions": {
+            "min": "0.1.0",
+            "max": "0.1.0"
+        }
+    },
+
+    "translations": {
+        "0-1.levelName": "DO OHŇA",
+        "0-1.titleName": "0-1: DO OHŇA",
+        "0-2.levelName": "MLYNČEK NA MÄSO",
+        "0-2.titleName": "0-2: MLYNČEK NA MÄSO",
+        "0-3.levelName": "ZDVOJNÁSOBENIE STÁVKY",
+        "0-3.titleName": "0-3: ZDVOJNÁSOBENIE STÁVKY",
+        "0-4.levelName": "ARMÁDA JEDNÉHO STROJA",
+        "0-4.titleName": "0-4: ARMÁDA JEDNÉHO STROJA",
+        "0-5.levelName": "CERBERUS",
+        "0-5.titleName": "0-5: CERBERUS",
+        "0-S.levelName": "NIEČO ZLOVESTNÉ",
+        "0-S.titleName": "0-S: NIEČO ZLOVESTNÉ",
+        "0-1.fullIntro": "PLNÉ INTRO?",
+        "prelude.title": "PRELÚDIUM",
+
+        "mainMenu.title": "HLAVNÉ MENU",
+
+        "option.yes": "ÁNO",
+        "option.no": "NIE",
+        "option.cancel": "ZRUŠIŤ",
+
+        "options.general.weapons.title": "-- ZBRANE --",
+        "options.general.weapons.lastUsed": "ZAPAMÄTAŤ POSLEDNÚ POUŽITÚ VARIÁCIU ZBRANE",
+        "options.general.weapons.weaponPosition": "POLOHA ZBRANE",
+        "options.general.screen.title": "-- OBRAZOVKA --",
+        "options.general.screen.screenShake": "TRIASENIE OBRAZOVKY",
+        "options.general.screen.parryFlash": "ZABRÁNENIE ZABRÁNENIU OBRAZOVKY",
+        "options.general.screen.cameraTilt": "NÁKLON KAMERY"
+    }
+}

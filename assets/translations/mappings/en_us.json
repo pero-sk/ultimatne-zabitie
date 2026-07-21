@@ -1,0 +1,30 @@
+{
+    "INTO THE FIRE": "0-1.levelName",
+    "0-1: INTO THE FIRE": "0-1.titleName",
+    "THE MEATGRINDER": "0-2.levelName",
+    "0-2: THE MEATGRINDER": "0-2.titleName",
+    "DOUBLE DOWN": "0-3.levelName",
+    "0-3: DOUBLE DOWN": "0-3.titleName",
+    "A ONE-MACHINE ARMY": "0-4.levelName",
+    "0-4: A ONE-MACHINE ARMY": "0-4.titleName",
+    "CERBERUS": "0-5.levelName",
+    "0-5: CERBERUS": "0-5.titleName",
+    "SOMETHING WICKED": "0-S.levelName",
+    "0-S: SOMETHING WICKED": "0-S.titleName",
+    "FULL INTRO?": "0-1.fullIntro",
+    "PRELUDE": "prelude.title",
+
+    "MAIN MENU": "mainMenu.title",
+
+    "YES": "option.yes",
+    "NO": "option.no",
+    "CANCEL": "option.cancel",
+
+    "-- WEAPONS --": "options.general.weapons.title",
+    "REMEMBER LAST USED WEAPON VARIATION": "options.general.weapons.lastUsed",
+    "WEAPON POSITION": "options.general.weapons.weaponPosition",
+    "-- SCREEN --": "options.general.screen.title",
+    "SCREENSHAKE": "options.general.screen.screenShake",
+    "PARRY SCREEN FLASH": "options.general.screen.parryFlash",
+    "CAMERA TILT": "options.general.screen.cameraTilt"
+}

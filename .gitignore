@@ -1,6 +1,11 @@
 # dll files from the game, do not distrubute
 ref/
 
-# build directory (I think)
+# build directories
 bin/
 obj/
+dist/
+
+# build files / reference files
+*.dll
+*.pdb
