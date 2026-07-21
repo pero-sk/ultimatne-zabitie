@@ -23,7 +23,7 @@
     "CLAIR DE LUNE": "1-4.levelName",
     "1-4: CLAIR DE LUNE": "1-4.titleName",
     "THE WITLESS": "1-S.levelName",
-    "1-S: THE WITLESS": "1-2.titleName",
+    "1-S: THE WITLESS": "1-S.titleName",
     "LAYER 1: LIMBO": "limbo.title",
     "BRIDGEBURNER": "2-1.levelName",
     "2-1: BRIDGEBURNER": "2-1.titleName",
@@ -75,7 +75,7 @@
     "SEASONAL EVENTS": "options.general.misc.seasonalEvents",
     "LEVEL LEADERBOARDS": "options.general.misc.levelLeaderboards",
     "MISSION RESTART/QUIT WARNING": "options.general.misc.restartQuitWarning",
-    "SANDBOX SAVE OVERWRITE WARNING": "options.general.misc.SaveOverwriteWarning",
+    "SANDBOX SAVE OVERWRITE WARNING": "options.general.misc.saveOverwriteWarning",
     "DISCORD INTEGRATION": "options.general.misc.discordIntegration",
     "ADVANCED OPTIONS": "options.general.misc.advancedOptions"
 }
