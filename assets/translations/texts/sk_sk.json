@@ -39,6 +39,7 @@
         "options.general.screen.title": "-- OBRAZOVKA --",
         "options.general.screen.screenShake": "TRIASENIE OBRAZOVKY",
         "options.general.screen.parryFlash": "ZABRÁNENIE ZABRÁNENIU OBRAZOVKY",
-        "options.general.screen.cameraTilt": "NÁKLON KAMERY"
+        "options.general.screen.cameraTilt": "NÁKLON KAMERY",
+        "option.alwaysOn":"VŽDY ZAPNUTÉ"
     }
 }
