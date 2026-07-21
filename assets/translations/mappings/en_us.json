@@ -20,11 +20,29 @@
     "NO": "option.no",
     "CANCEL": "option.cancel",
 
+    "OPEN": "option.open",
+    "RETURN": "option.return",
+
+    "ALWAYS ON": "option.alwaysOn",
+    "ALWAYS OFF": "option.alwaysOff",
+    "CYBERGRIND ONLY": "option.cibergrindOnly",
+
+    "RIGHT": "option.right",
+    "LEFT": "option.left",
+    "MIDDLE": "option.middle",
+
     "-- WEAPONS --": "options.general.weapons.title",
     "REMEMBER LAST USED WEAPON VARIATION": "options.general.weapons.lastUsed",
     "WEAPON POSITION": "options.general.weapons.weaponPosition",
     "-- SCREEN --": "options.general.screen.title",
     "SCREENSHAKE": "options.general.screen.screenShake",
     "PARRY SCREEN FLASH": "options.general.screen.parryFlash",
-    "CAMERA TILT": "options.general.screen.cameraTilt"
+    "CAMERA TILT": "options.general.screen.cameraTilt",
+    "-- MISC --": "options.general.misc.title",
+    "SEASONAL EVENTS": "options.general.misc.seasonalEvents",
+    "LEVEL LEADERBOARDS": "options.general.misc.levelLeaderboards",
+    "MISSION RESTART/QUIT WARNING": "options.general.misc.restartQuitWarning",
+    "SANDBOX SAVE OVERWRITE WARNING": "options.general.misc.SaveOverwriteWarning",
+    "DISCORD INTEGRATION": "options.general.misc.discordIntegration",
+    "ADVANCED OPTIONS": "options.general.misc.advancedOptions"
 }
