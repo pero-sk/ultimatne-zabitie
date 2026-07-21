@@ -24,17 +24,18 @@ It works by intercepting the game's `TextMeshPro` text as it's set, mapping the 
 This repo does **not** include ULTRAKILL's assemblies. You need to supply your own copies (from your own legitimate install of the game) since redistributing them isn't allowed.
 
 1. Create a `ref/` folder in the project root.
-2. Copy the following DLLs into `ref/` from your `ULTRAKILL/ULTRAKILL_Data/Managed/` folder (plus BepInEx's `0Harmony.dll` from your BepInEx install):
+2. Copy the following DLLs into `ref/` from your `ULTRAKILL/ULTRAKILL_Data/Managed/` folder:
    - `Assembly-CSharp.dll`
-   - `BepInEx.dll`
    - `UnityEngine.dll`
    - `UnityEngine.CoreModule.dll`
    - `Unity.TextMeshPro.dll`
    - `UnityEngine.UI.dll`
    - `Newtonsoft.Json.dll`
+3. Copy the following DLLs into `ref/` from your `ULTRAKILL/BepInEx/core` folder:
+   - `BepInEx.dll`
    - `0Harmony.dll`
-3. Edit `build.ps1` and update `$UltrakillPluginsDir` to point at your own ULTRAKILL install.
-4. Run the build script from a PowerShell prompt in the project root:
+4. Edit `build.ps1` and update `$UltrakillPluginsDir` to point at your own ULTRAKILL install.
+5. Run the build script from a PowerShell prompt in the project root:
    ```powershell
    ./build.ps1
    ```
