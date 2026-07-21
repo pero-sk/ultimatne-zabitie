@@ -3,6 +3,7 @@
 using Newtonsoft.Json;
 using BepInEx;
 using System.Text.RegularExpressions;
+using TMPro;
 
 namespace ultimatne_zabitie;
 
@@ -10,8 +11,19 @@ public static class TranslationManager
 {
     private static Dictionary<string, string> translations = new();
 
+public static void RefreshAllText()
+{
+    foreach (var text in UnityEngine.Object.FindObjectsOfType<TMP_Text>(true))
+    {
+        text.text = text.text;
+    }
+}
+
     public static string Translate(string text)
     {
+        if (LanguageManager.CurrentLanguage.IsNative)
+            return text;
+
         string clean = Regex.Replace(text, "<.*?>", "");
 
         string? id = EnglishMappingManager.GetId(clean);
@@ -28,13 +40,17 @@ public static class TranslationManager
     {
         Plugin.Log.LogInfo("TranslationManager.Load() started");
 
-        string path = Path.Combine(
-            Paths.PluginPath,
-            "ultimatne-zabitie",
-            "translations",
-            "texts",
-            "sk_sk.json"
-        );
+        if (LanguageManager.CurrentLanguage.IsNative)
+        {
+            Plugin.Log.LogInfo(
+                "Current language is native, skipping translations"
+            );
+
+            translations = new();
+            return;
+        }
+
+        string path = LanguageManager.CurrentLanguage.FilePath;
 
         Plugin.Log.LogInfo($"Path: {path}");
 

@@ -1,62 +1,67 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <RootNamespace>ultimatne_zabitie</RootNamespace>
-    <LangVersion>latest</LangVersion>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
-  
-    <ItemGroup>
-        <None Include="assets\**\*">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </None>
-    </ItemGroup>
+ <PropertyGroup>
+   <TargetFramework>net48</TargetFramework>
+   <RootNamespace>ultimatne_zabitie</RootNamespace>
+   <LangVersion>latest</LangVersion>
+   <ImplicitUsings>enable</ImplicitUsings>
+   <Nullable>enable</Nullable>
+ </PropertyGroup>
+
+   <ItemGroup>
+       <None Include="assets\**\*">
+           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+       </None>
+   </ItemGroup>
+
+   <ItemGroup>
+       <None Remove="ref/**" />
+   </ItemGroup>
+
+   <ItemGroup>
+       <!-- Ignore decompiled C# source files -->
+       <Compile Remove="ref/**/*.cs" />
+   </ItemGroup>
 
     <ItemGroup>
-        <None Remove="ref/**" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <!-- Ignore decompiled C# source files -->
-        <Compile Remove="ref/**/*.cs" />
-    </ItemGroup>
-
-    <ItemGroup>
-        <Reference Include="Assembly-CSharp">
-            <HintPath>ref/Assembly-CSharp.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
+       <Reference Include="Assembly-CSharp">
+           <HintPath>ref/Assembly-CSharp.dll</HintPath>
+           <Private>false</Private>
+       </Reference>
 
         <Reference Include="BepInEx">
-            <HintPath>ref/BepInEx.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
+           <HintPath>ref/BepInEx.dll</HintPath>
+           <Private>false</Private>
+       </Reference>
 
         <Reference Include="UnityEngine">
-            <HintPath>ref/UnityEngine.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
+           <HintPath>ref/UnityEngine.dll</HintPath>
+           <Private>false</Private>
+       </Reference>
+
+        <Reference Include="UnityEngine.CoreModule">
+           <HintPath>ref/UnityEngine.CoreModule.dll</HintPath>
+           <Private>false</Private>
+       </Reference>
 
         <Reference Include="Unity.TextMeshPro">
-            <HintPath>ref/Unity.TextMeshPro.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
+           <HintPath>ref/Unity.TextMeshPro.dll</HintPath>
+           <Private>false</Private>
+       </Reference>
 
-        <Reference Include="UnityEngine.coreModule">
-            <HintPath>ref/UnityEngine.CoreModule.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
+        <Reference Include="UnityEngine.UI">
+           <HintPath>ref/UnityEngine.UI.dll</HintPath>
+           <Private>false</Private>
+       </Reference>
 
         <Reference Include="Newtonsoft.Json">
-            <HintPath>ref/Newtonsoft.Json.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
+           <HintPath>ref/Newtonsoft.Json.dll</HintPath>
+           <Private>false</Private>
+       </Reference>
 
         <Reference Include="Harmony">
-            <HintPath>ref/0Harmony.dll</HintPath>
-            <Private>false</Private>
-        </Reference>
-    </ItemGroup>
+           <HintPath>ref/0Harmony.dll</HintPath>
+           <Private>false</Private>
+       </Reference>
+   </ItemGroup>
 </Project>

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+// ID Mapper
 using Newtonsoft.Json;
 using BepInEx;
 

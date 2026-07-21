@@ -1,9 +1,10 @@
 {
     "metadata": {
         "lang-name": "sk_SK",
-        "lang-author": "Galx7599Sk",
+        "lang-author": "Galx7599Sk, pero-sk",
         "lang-version": "1.0.0",
-        "lang-display": "Slovenčina",
+        "lang-display": "Slovenčina (Slovak)",
+        "lang-code": "sk_sk",
         "lang-rtl": false,
         "versions": {
             "min": "0.1.0",
