@@ -15,11 +15,9 @@ It works by intercepting the game's `TextMeshPro` text as it's set, mapping the 
 ## Installing (as a player)
 
 1. Install [BepInEx 5.x](https://github.com/BepInEx/BepInEx/releases) for ULTRAKILL if you haven't already.
-2. Drop the `ultimatne-zabitie` folder (containing `ultimatne-zabitie.dll` and the `assets/` folder) into:
-   ```
-   <ULTRAKILL install folder>/BepInEx/plugins/
-   ```
-3. Launch the game. Open **Settings** to pick your language from the dropdown.
+2. Grab the ultimatnie-zabite.dll file from the [Latest Release](https://github.com/pero-sk/ultimatne-zabitie/releases).
+3. Put it in your BepInEx's plugin folder under a subdirectory called "ultimatne-zabitie" (pathto_ULTRAKILL/BepInEx/plugins/ultimatne-zabitite/)
+4. Launch the game. Open **Settings** to pick your language from the dropdown.
 
 ## Building from source
 
