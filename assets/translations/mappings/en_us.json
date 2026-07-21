@@ -47,6 +47,9 @@
     "C": "rank.cooked",
     "D": "rank.disappointment",
 
+    "ANY": "leaderboard.anyRank",
+    "P-RANK": "leaderboard.pRank",
+    
     "MAIN MENU": "mainMenu.title",
 
     "YES": "option.yes",
