@@ -1,4 +1,5 @@
 using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
 using HarmonyLib;
 
@@ -13,6 +14,9 @@ public class Plugin : BaseUnityPlugin
 {
     internal static ManualLogSource Log = null!;
 
+    internal static ConfigEntry<string> LanguageCode = null!;
+
+
     private void Awake()
     {
         Log = Logger;
@@ -23,7 +27,6 @@ public class Plugin : BaseUnityPlugin
 
             var harmony = new Harmony("sk.ultimatnezabitie");
 
-            // Patch classes individually so we can log which type (if any) fails during patching.
             Logger.LogInfo("Patching Harmony types individually...");
             var asm = typeof(Plugin).Assembly;
             foreach (var type in asm.GetTypes())
@@ -45,8 +48,15 @@ public class Plugin : BaseUnityPlugin
             }
             Logger.LogInfo("Harmony patching complete");
 
+            LanguageCode = Config.Bind(
+                "General",                // Section
+                "Language",               // Key
+                "en_us",                  // Default value
+                "Selected language"       // Description
+            );
+
             Logger.LogInfo("Loading languages...");
-            LanguageManager.LoadLanguages(true);
+            LanguageManager.LoadLanguages();
             Logger.LogInfo("Languages loaded");
 
             Logger.LogInfo("Loading English mappings...");
@@ -59,7 +69,6 @@ public class Plugin : BaseUnityPlugin
         }
         catch (Exception e)
         {
-            // Log the exception to help diagnose why execution stopped after AWAKE START
             Logger.LogError("Plugin Awake threw an exception:");
             Logger.LogError(e);
         }

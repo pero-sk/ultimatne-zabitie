@@ -13,13 +13,6 @@ public static class LanguageManager
             .OrderBy(x => x.Code)
             .ToList();
 
-    public static LanguageInfo CurrentLanguage { get; private set; } = null!;
-
-    public static PreferenceKey LanguagePreference = new()
-    {
-        key = "language"
-    };
-
     public static LanguageInfo DefaultLanguage { get; } = new()
     {
         Code = "en_us",
@@ -27,8 +20,10 @@ public static class LanguageManager
         Author = "Hakita, NewBlood",
         Version = "1.0.0",
         IsNative = true,
-        FilePath = "built_in" // shitty code exists if this gets used for DefaultLanguage
+        FilePath = "built_in"
     };
+
+    public static LanguageInfo CurrentLanguage { get; private set; } = DefaultLanguage;
 
     public static List<string> GetLanguageNames()
     {
@@ -42,38 +37,25 @@ public static class LanguageManager
         return Languages.Keys.ToList();
     }
 
-    public static void SetCurrentLanguage(LanguageInfo lang)
+    public static void SetCurrentLanguage(LanguageInfo lang, bool refresh = true)
     {
         if (!Languages.ContainsKey(lang.Code))
         {
-            Plugin.Log.LogError(
-                $"Unknown language: {lang.Code}"
-            );
+            Plugin.Log.LogError($"Unknown language: {lang.Code}");
             return;
         }
 
         CurrentLanguage = Languages[lang.Code];
 
-
-        int index = AvailableLanguages
-            .FindIndex(x => x.Code == lang.Code);
-
-        if (LanguagePreference.IsValid())
-        {
-            LanguagePreference.SetValue(index);
-        }
-
         TranslationManager.Load();
-        TranslationManager.RefreshAllText();
+
+        if (refresh)
+            TranslationManager.RefreshAllText();
     }
 
-    public static void LoadLanguages(bool resetToDefault)
+    public static void LoadLanguages()
     {
-        // Ensure default language is present (use indexer to avoid ArgumentException when already present)
         Languages[DefaultLanguage.Code] = DefaultLanguage;
-        if (resetToDefault) {
-            SetCurrentLanguage(DefaultLanguage);
-        }
 
         string path = Path.Combine(
             Paths.PluginPath,
@@ -104,6 +86,17 @@ public static class LanguageManager
             );
         }
 
+        string code = Plugin.LanguageCode.Value;
+
+        if (Languages.TryGetValue(code, out var lang))
+        {
+            SetCurrentLanguage(lang);
+        }
+        else
+        {
+            SetCurrentLanguage(DefaultLanguage);
+        }
+
         Plugin.Log.LogInfo(
             $"Loaded {Languages.Count} languages"
         );
@@ -114,6 +107,10 @@ public static class LanguageManager
     {
         try
         {
+            if (path == "built_in")
+            {
+                return DefaultLanguage;
+            }
             string json = File.ReadAllText(path);
 
             JObject root = JObject.Parse(json);

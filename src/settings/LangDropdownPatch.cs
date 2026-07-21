@@ -1,5 +1,7 @@
 using HarmonyLib;
 using SettingsMenu.Components;
+using System.Reflection;
+using TMPro;
 
 namespace ultimatne_zabitie;
 
@@ -11,37 +13,54 @@ public static class LanguageDropdownPatch
         if (itemBuilder.asset.name != "languageSelector")
             return;
 
-        __instance.onValueChanged.AddListener(OnChanged);
+        var dropdownField = typeof(SettingsDropdown)
+            .GetField("dropdown", BindingFlags.Instance | BindingFlags.NonPublic);
 
-        Plugin.Log.LogInfo("Language dropdown hooked");
+        if (dropdownField == null)
+        {
+            Plugin.Log.LogError("Could not find dropdown field");
+            return;
+        }
+
+        var dropdown = dropdownField.GetValue(__instance) as TMP_Dropdown;
+
+        if (dropdown == null)
+        {
+            Plugin.Log.LogError("Dropdown field was null");
+            return;
+        }
+
+        int index = LanguageManager.AvailableLanguages.FindIndex(
+            x => x.Code == LanguageManager.CurrentLanguage.Code
+        );
+
+        dropdown.SetValueWithoutNotify(index);
+        dropdown.RefreshShownValue();
+
+        dropdown.onValueChanged.AddListener(OnChanged);
+
+        Plugin.Log.LogInfo(
+            $"Language dropdown initialized: {index} ({LanguageManager.CurrentLanguage.DisplayName})"
+        );
     }
+
 
     private static void OnChanged(int value)
     {
-        var language = LanguageManager.Languages.Values
-            .OrderBy(x => x.Code)
-            .ElementAt(value);
+        var languages = LanguageManager.AvailableLanguages;
+
+        if (value < 0 || value >= languages.Count)
+        {
+            Plugin.Log.LogError($"Invalid language index: {value}");
+            return;
+        }
+
+        var language = languages[value];
 
         LanguageManager.SetCurrentLanguage(language);
 
         Plugin.Log.LogInfo(
             $"Changed language to {language.DisplayName}"
         );
-    }
-
-    public static void OnValueChangedInt(int value)
-    {
-        Plugin.Log.LogInfo($"(ReflectiveHook) Dropdown changed -> {value}");
-
-        var prefs = MonoSingleton<PrefsManager>.Instance;
-
-        if (prefs != null)
-        {
-            prefs.SetInt("language", value);
-        }
-
-        var language = LanguageManager.AvailableLanguages[value];
-
-        LanguageManager.SetCurrentLanguage(language);
     }
 }

@@ -7,6 +7,10 @@ public static class LanguageSettings
 {
     public static SettingsCategory Create()
     {
+        Plugin.Log.LogInfo(
+            $"Creating language settings, current = {LanguageManager.CurrentLanguage.Code}"
+        );
+
         var category = ScriptableObject.CreateInstance<SettingsCategory>();
 
         category.title = "LANGUAGE";
@@ -20,15 +24,15 @@ public static class LanguageSettings
         item.itemType = SettingsItemType.Dropdown;
         item.dropdownType = SettingsDropdownType.List;
 
-        item.preferenceKey = LanguageManager.LanguagePreference;
-
-        var languages = LanguageManager.Languages.Values
-            .OrderBy(x => x.Code)
-            .ToList();
+        var languages = LanguageManager.AvailableLanguages;
 
         item.dropdownList = languages
             .Select(x => x.DisplayName)
             .ToArray();
+
+        item.defaultCombination = languages.FindIndex(
+            x => x.Code == LanguageManager.CurrentLanguage.Code
+        );
 
         item.valueType = SettingsMenu.Models.ValueType.Int;
 
