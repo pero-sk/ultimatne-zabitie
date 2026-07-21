@@ -41,6 +41,7 @@
         "options.general.screen.parryFlash": "ZABRÁNENIE ZABRÁNENIU OBRAZOVKY",
         "options.general.screen.cameraTilt": "NÁKLON KAMERY",
         "option.alwaysOn":"VŽDY ZAPNUTÉ",
-        "option.alwaysOff": "VŽDY VYPNUTÉ"
+        "option.alwaysOff": "VŽDY VYPNUTÉ",
+        "option.cybergrindOnly": "LEN CYBERGRIND"
     }
 }
