@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>ultimatne_zabitie</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  
+  <ItemGroup>
+      <Reference Include="Assembly-CSharp">
+          <HintPath>ref/Assembly-CSharp.dll</HintPath>
+      </Reference>
+
+      <Reference Include="BepInEx">
+          <HintPath>ref/BepInEx.dll</HintPath>
+      </Reference>
+
+      <Reference Include="UnityEngine">
+          <HintPath>ref/UnityEngine.dll</HintPath>
+      </Reference>
+  </ItemGroup>
+</Project>

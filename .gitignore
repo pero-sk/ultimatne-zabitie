@@ -1,0 +1,6 @@
+# dll files from the game, do not distrubute
+ref/
+
+# build directory (I think)
+bin/
+obj/
