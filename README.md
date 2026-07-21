@@ -62,6 +62,7 @@ src/
 assets/translations/
   mappings/en_us.json           English text -> translation ID map (the "source of truth" for keys)
   texts/<lang_code>.json        Per-language translation files (e.g. sk_sk.json)
+  texts/manifest.json           Contains every language file in texts/ for easy downloading of them from the mod
 ```
 
 ## Adding a new language
@@ -86,6 +87,7 @@ assets/translations/
    ```
 3. Fill in `translations` using the IDs found in `assets/translations/mappings/en_us.json` (each English string maps to an ID like `0-1.levelName`, `mainMenu.title`, etc.) — you don't need every ID, just the ones you've translated so far.
 4. Drop the file in `assets/translations/texts/`, rebuild, and your language will show up in the in-game dropdown automatically.
+5. To provide the language globally for everyone, fork this repo, add your <your_lang_code>.json to assets/translations/texts/... and into manifest.json.
 
 ## License
 
