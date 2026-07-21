@@ -2,7 +2,7 @@
 
 A [BepInEx](https://github.com/BepInEx/BepInEx) plugin that adds Slovak (and, more generally, additional languages) localization support to [ULTRAKILL](https://ultrakill.fandom.com/wiki/ULTRAKILL).
 
-It works by intercepting the game's `TextMeshPro` text as it's set, mapping the original English string to a translation ID, and swapping in the translated string for the currently selected language — without touching the game's own assemblies.
+It works by intercepting the game's `TextMeshPro` text as it's set, mapping the original English string to a translation ID, and swapping in the translated string for the currently selected language.
 
 ## Features
 
@@ -21,7 +21,7 @@ It works by intercepting the game's `TextMeshPro` text as it's set, mapping the 
 
 ## Building from source
 
-This repo does **not** include ULTRAKILL's assemblies — you need to supply your own copies (from your own legitimate install of the game) since redistributing them isn't allowed.
+This repo does **not** include ULTRAKILL's assemblies. You need to supply your own copies (from your own legitimate install of the game) since redistributing them isn't allowed.
 
 1. Create a `ref/` folder in the project root.
 2. Copy the following DLLs into `ref/` from your `ULTRAKILL/ULTRAKILL_Data/Managed/` folder (plus BepInEx's `0Harmony.dll` from your BepInEx install):
@@ -93,7 +93,7 @@ assets/translations/
 
 Apache License 2.0. See [LICENSE.md](LICENSE.md).
 
-ULTRAKILL is © 3D Realms / New Blood Interactive / Hakita. This project is an unofficial fan-made mod and is not affiliated with or endorsed by them. No game assets or decompiled source code are distributed with this repository.
+ULTRAKILL is © 3D Realms / New Blood Interactive / Hakita. This project is an unofficial fan-made mod and is not affiliated with or endorsed by them.
 
 ## Future plans
 
