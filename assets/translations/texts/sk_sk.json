@@ -42,6 +42,12 @@
         "options.general.screen.cameraTilt": "NÁKLON KAMERY",
         "option.alwaysOn":"VŽDY ZAPNUTÉ",
         "option.alwaysOff": "VŽDY VYPNUTÉ",
-        "option.cybergrindOnly": "LEN CYBERGRIND"
+        "option.cybergrindOnly": "LEN CYBERGRIND",
+        "option.open": "OTVORIŤ",
+        "option.return": "VRÁTIŤ SA",
+
+        "option.right": "VPRAVO",
+        "option.left": "VĽAVO",
+        "option.middle": "V STREDE"
     }
 }
