@@ -94,7 +94,7 @@ assets/translations/
 
 Apache License 2.0. See [LICENSE.md](LICENSE.md).
 
-ULTRAKILL is © 3D Realms / New Blood Interactive / Hakita. This project is an unofficial fan-made mod and is not affiliated with or endorsed by them.
+ULTRAKILL under copyright. © Hakita, with publishing rights by New Blood Interactive. This project is an unofficial fan-made mod and is not affiliated with or endorsed by them.
 
 ## Future plans
 
