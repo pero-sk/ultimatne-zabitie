@@ -27,14 +27,14 @@ New-Item "dist\$PluginName" -ItemType Directory | Out-Null
 
 Copy-Item "$Output\$PluginName.dll" "dist\$PluginName\"
 
-if (Test-Path "assets") {
-    Copy-Item "assets" "dist\$PluginName\" -Recurse
-}
-
 Write-Host "Copying to ULTRAKILL..."
 
 if (Test-Path $UltrakillPluginsDir) {
-    Remove-Item "$UltrakillPluginsDir\*" -Recurse -Force
+    if (Test-Path $UltrakillPlugins) {
+        Remove-Item $UltrakillPlugins -Recurse -Force
+    }
+
+    New-Item $UltrakillPlugins -ItemType Directory | Out-Null
     Copy-Item "dist\$PluginName\*" $UltrakillPlugins -Recurse
 
     Write-Host "Installed!"
